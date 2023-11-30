@@ -1,5 +1,5 @@
 import { Controller, Param, Query, Get } from '@nestjs/common';
-import { GithubService } from './github.service';
+import { GithubService } from '../services/github.service';
 
 @Controller('github')
 export class GithubController {

@@ -14,10 +14,10 @@ export class GithubService {
         return process.env.MESSAGE_WELCOME;
     }
 
-    async fetchGithubCommits(repositoryURL: string): Promise<any> {
+    async fetchGithubCommits(url: string): Promise<any> {
         try {
 
-            const githubInfo = extractGitHubRepoInfo(repositoryURL);
+            const githubInfo = extractGitHubRepoInfo(url);
 
             if(githubInfo !== null){
                 const url = `${process.env.GITHUB_API}${githubInfo.owner}/${githubInfo.repoName}${process.env.GITHUB_API_COMMITS}`;
