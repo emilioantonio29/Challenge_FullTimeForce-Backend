@@ -1,4 +1,4 @@
-import { Controller, Post, Body } from '@nestjs/common';
+import { Controller, Post, Body, HttpCode } from '@nestjs/common';
 import { UserService } from '../services/user.service';
 import { UserLoginDTO } from '../dtos/user-login-request';
 
@@ -8,6 +8,7 @@ export class UserController {
     constructor(private readonly userService: UserService) {}
 
     @Post('login')
+    @HttpCode(200)
     async loginUser(@Body() loginDTO: UserLoginDTO): Promise<any> {
         
       const { email, password } = loginDTO;
